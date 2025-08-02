@@ -15,6 +15,7 @@ from model_manager import (
     ImageGuidedDetectionProcessor
 )
 from ui_components import SidebarManager, InputManager, ResultsManager
+from visualization import FlowVisualizationManager
 
 
 class OWLViTApp:
@@ -306,6 +307,12 @@ class OWLViTApp:
         selected_model = SidebarManager.create_model_selection()
         detection_mode = SidebarManager.create_detection_mode_selection()
         confidence_threshold, nms_threshold = SidebarManager.create_confidence_settings()
+        visualization_type = SidebarManager.create_visualization_options()
+        
+        # 可視化の表示
+        if st.session_state.get('show_flow_diagram', False):
+            FlowVisualizationManager.display_flow_visualization()
+            st.markdown("---")  # 区切り線
         
         # モデルの初期化
         if not self.initialize_model(selected_model):
@@ -324,7 +331,7 @@ class OWLViTApp:
             st.write("基本的な物体検出を実行します。")
             
             # 検出実行ボタン
-            if st.button("�� シンプル検出を実行", type="primary"):
+            if st.button("🔍 シンプル検出を実行", type="primary"):
                 with st.spinner("シンプル検出を実行中..."):
                     # 基本的なクエリを使用（数を制限）
                     basic_queries = ["person", "car", "dog"]

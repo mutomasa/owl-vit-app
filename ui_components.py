@@ -88,6 +88,29 @@ class SidebarManager:
         st.session_state.debug_mode = debug_mode
         
         return confidence_threshold, nms_threshold
+    
+    @staticmethod
+    def create_visualization_options() -> str:
+        """
+        可視化オプションのUIを作成します
+        
+        Returns:
+            選択された可視化タイプ
+        """
+        st.sidebar.subheader("📊 可視化オプション")
+        
+        show_flow_diagram = st.sidebar.checkbox(
+            "処理フロー図を表示",
+            value=False,
+            help="OWL-ViTの処理フローを可視化"
+        )
+        
+        if show_flow_diagram:
+            st.session_state.show_flow_diagram = True
+        else:
+            st.session_state.show_flow_diagram = False
+        
+        return "flow_diagram" if show_flow_diagram else "none"
 
 
 class InputManager:
