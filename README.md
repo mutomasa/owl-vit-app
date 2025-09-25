@@ -294,7 +294,7 @@ uv run mypy .
 - [OWL-ViT Paper](https://arxiv.org/abs/2205.06230)
 - [Hugging Face Documentation](https://huggingface.co/docs/transformers/model_doc/owlvit)
 - [Streamlit Documentation](https://docs.streamlit.io/)
-- [OWL-ViT GitHub Repository](https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit)
+- [OWL-ViT GitHub Repository](https://github.com/google-research/scenic/tree/main/scenic/projects/owl_vit) 
 
 ## 🤝 貢献
 

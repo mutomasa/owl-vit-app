@@ -155,10 +155,10 @@ class InputManager:
             with col3:
                 st.metric("サイズ", f"{image.width * image.height:,}px²")
             
-            return image
+                return image
         else:
             st.warning("画像を入力してください")
-            return None
+        return None
     
     @staticmethod
     def _load_sample_image() -> Optional[Image.Image]:
@@ -298,8 +298,8 @@ class InputManager:
             
             # 複数のテキストクエリを入力
             num_queries = st.number_input(
-                "クエリの数",
-                min_value=1,
+                "クエリの数", 
+                min_value=1, 
                 max_value=5,
                 value=1,
                 help="検出したい物体のクエリ数を設定"
@@ -361,7 +361,7 @@ class InputManager:
                 "検索したい物体を入力",
                 placeholder="例: 猫, car, 椅子",
                 help="検出したい物体を入力してください（日本語・英語対応）"
-            )
+                )
             
             # クエリ提案機能
             if search_query.strip():
@@ -416,7 +416,7 @@ class InputManager:
                 return None
         else:
             st.warning("テキストクエリを入力してください")
-            return None
+        return None
     
     @staticmethod
     def create_query_image_section() -> Optional[Image.Image]:

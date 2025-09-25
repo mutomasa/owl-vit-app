@@ -48,7 +48,7 @@ class ImageLoader:
         except Exception as e:
             st.error(f"アップロードファイルの読み込みに失敗しました: {e}")
             return None
-    
+
     @staticmethod
     def load_from_camera() -> Optional[Image.Image]:
         """

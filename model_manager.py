@@ -122,7 +122,7 @@ class TextQueryProcessor:
         if len(formatted_queries) > 5:
             formatted_queries = formatted_queries[:5]
             st.warning(f"クエリの数が多すぎるため、最初の5個に制限しました")
-        
+            
         # デバッグ情報を表示
         if st.session_state.get('debug_mode', True):
             st.write(f"**📝 生成されたクエリバリエーション:**")

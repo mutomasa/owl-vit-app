@@ -303,7 +303,7 @@ class JapaneseTranslator:
                 variations.append(query[:-1])  # 複数形→単数形
             else:
                 variations.append(query + 's')  # 単数形→複数形
-            
+        
             # より多くの英語バリエーションを追加
             if not query.startswith('a ') and not query.startswith('the '):
                 variations.extend([
